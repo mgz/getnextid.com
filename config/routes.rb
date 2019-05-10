@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    scope "id" do
+        get ":name" => 'api#show'
+        post ":name" => 'api#inc_or_create'
+    end
 end
