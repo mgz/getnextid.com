@@ -11,5 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
 //= require_tree .
+
+
+function autofocus() {
+	$(function() {
+		$('input.autofocus:first', this).focus().select();
+	});
+}
+
+$(function() {
+	autofocus();
+});

@@ -1,0 +1,100 @@
+body {
+	//background: #fbfbfb url(//img.vidosiki.tv/images/textures/cream_dust.png);
+	background: #ebecf1;
+
+}
+
+.nav {
+	.nav-item {
+		.nav-text {
+			margin-top: 9px;
+		}
+	}
+}
+.nav-tabs .nav-link.active {
+	//background-color: transparent;
+}
+
+.card {
+	box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
+
+
+	.card-body {
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.card:not(.with_header) {
+	.card-header {
+		//background-color: rgba(46, 41, 78, 0.12);
+		background-color: transparent;
+		border-bottom: none;
+	}
+}
+
+.card.first_card {
+	border-top: none;
+	.card-body {
+		p:first-child {
+			margin-top: 1em;
+		}
+	}
+}
+
+.card .card {
+	box-shadow: none;
+}
+
+@media (min-width: 576px) {
+	.video_thumbs {
+		.card-deck {
+			-ms-flex-flow: row wrap;
+			flex-flow: row wrap;
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+}
+
+a.nohover:hover {
+	text-decoration: none !important;
+}
+
+kbd {
+	background-color: transparent;
+	padding: 0;
+	font-size: 100%;
+}
+
+a.nohover:hover {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.bg-danger {
+	background-color: #dc989c!important;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+	padding: 0.3rem 1rem;
+	border-radius: 1rem;
+}
+
+
+/* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/
+.toggle-off {
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.toggle.off {
+	border-color: rgba(0, 0, 0, .25);
+}
+
+.toggle-handle {
+	background-color: white;
+	border: thin rgba(0, 0, 0, .25) solid;
+}
+
+table.table-white {
+	background-color: #fff;
+}

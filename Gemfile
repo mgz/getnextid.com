@@ -66,3 +66,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spawnling'
 gem 'with_advisory_lock'
+gem 'rack-attack'
+gem "bootstrap_form"

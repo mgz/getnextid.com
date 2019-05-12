@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Nextval</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="<%= I18n.locale %>">
+<head>
+	<title><%= @page_title %></title>
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+	<%= render :partial => "layouts/meta" %>
+	<%= render :partial => "layouts/js_libs" %>
+
+
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<%= render :partial => "layouts/analytics" %>
+</head>
+
+
+<body class="controller_<%= controller_name %> action_<%= action_name %>">
+
+
+<div class="container">
+	<%= flash_messages %>
+	<%= yield %>
+	<%= render :partial => "layouts/footer" %>
+
+</div>
+</body>

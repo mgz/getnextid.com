@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(@counter, class: 'needs-validation') do |f| %>
+
+	<%= f.text_field :name, class: 'form-control autofocus', required: true, placeholder: 'my.new.counter', label: 'Counter name:' %>
+
+	<div class="text-center mt-3">
+		<%= submit_tag 'Create', class: 'btn btn-primary', id: 'submit_button' %>
+	</div>
+
+
+
+<% end %>

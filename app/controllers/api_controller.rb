@@ -13,11 +13,13 @@ class ApiController < ApplicationController
         unless (@counter = Counter.find_by_name(params[:name]))
             Counter.with_advisory_lock('find') do
                 @counter = Counter.create!(
-                    created_from_ip: request.remote_ip,
-                    incremented_from_ip: request.remote_ip
+                    name: params[:name],
+                    created_from_ip_id: Ip.get(request.remote_ip).id,
+                    incremented_from_ip_id: Ip.get(request.remote_ip).id
                 )
             end
         end
-        @counter.increment!
+        @counter.inc!
+        render plain: @counter.value
     end
 end
