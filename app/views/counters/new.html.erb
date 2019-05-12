@@ -1,11 +1,21 @@
-<%= bootstrap_form_for(@counter, class: 'needs-validation') do |f| %>
+<div class="row">
+	<div class="col-sm-6">
+		<%= bootstrap_form_for(@counter, class: 'needs-validation', local: true, label_errors: true) do |f| %>
 
-	<%= f.text_field :name, class: 'form-control autofocus', required: true, placeholder: 'my.new.counter', label: 'Counter name:' %>
+			<%= f.text_field :name, class: 'form-control autofocus', required: true, placeholder: 'my.new.counter', label: 'Counter name:' %>
+			<%= f.number_field :value, class: 'form-control', label: 'Start value:' %>
+			<%= f.text_field :password, class: 'form-control', label: 'Password to read and increment:', required: true, append: button_tag('Generate and copy', class: 'btn btn-info', type: 'button')  %>
+			<%= f.text_field :read_password, class: 'form-control', label: 'Password to read (optional):', placeholder: 'Optional', append: button_tag('Generate and copy', class: 'btn btn-info', type: 'button')  %>
 
-	<div class="text-center mt-3">
-		<%= submit_tag 'Create', class: 'btn btn-primary', id: 'submit_button' %>
+
+			<div class="text-right mt-3">
+				<%= submit_tag 'Create', class: 'btn btn-primary', id: 'submit_button' %>
+			</div>
+
+
+
+		<% end %>
+
 	</div>
+</div>
 
-
-
-<% end %>

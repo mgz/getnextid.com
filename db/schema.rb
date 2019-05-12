@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_172647) do
+ActiveRecord::Schema.define(version: 2019_05_12_072257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_172647) do
     t.text "read_password"
     t.index ["created_from_ip_id"], name: "index_counters_on_created_from_ip_id"
     t.index ["incremented_from_ip_id"], name: "index_counters_on_incremented_from_ip_id"
+    t.index ["name"], name: "index_counters_on_name", unique: true
   end
 
   create_table "ips", force: :cascade do |t|

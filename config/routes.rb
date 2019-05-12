@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         post ":name" => 'api#inc_or_create'
     end
     resources :counters do
-    
     end
+    get 'counter/:name' => 'counters#show'
+
 end

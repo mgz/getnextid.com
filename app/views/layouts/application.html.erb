@@ -19,8 +19,7 @@
 
 
 <body class="controller_<%= controller_name %> action_<%= action_name %>">
-
-
+<%= render :partial => "layouts/navbar" unless @hide_navbar%>
 <div class="container">
 	<%= flash_messages %>
 	<%= yield %>

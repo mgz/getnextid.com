@@ -1,0 +1,15 @@
+<div class="card">
+	<div class="card-body">
+		<p>Get current counter value:</p>
+
+		<code>$ curl "https://get-next-id.com/counter/<b><%= @counter.name %></b>?auth=<b><%= @counter.password %></b>"</code>
+	</div>
+</div>
+
+<div class="card mt-3">
+	<div class="card-body">
+		<p>Increment counter and ret new value:</p>
+
+		<code>$ curl -X POST "https://get-next-id.com/counter/<b><%= @counter.name %></b>?auth=<b><%= @counter.password %></b>"</code>
+	</div>
+</div>
