@@ -18,6 +18,7 @@ end
 
 # before 'rails:db:migrate', :make_tag
 before 'rails:db:migrate', :copy_overlays
+after 'copy_overlays', :precompile
 
 namespace :deploy do
     task :restart do
@@ -34,6 +35,10 @@ end
 
 task :update_crontab do
     as_app 'bundle exec whenever --update-crontab'
+end
+
+task :precompile do
+    as_app 'bin/rake assets:precompile RAILS_ENV=production'
 end
 
 task :make_tag do
