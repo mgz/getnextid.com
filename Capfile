@@ -37,7 +37,7 @@ task :update_crontab do
 end
 
 task :precompile do
-    invoke 'rails:assets:precompile'
+    Rake::Task["rails:assets:precompile"].invoke
 end
 
 task :make_tag do
