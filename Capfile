@@ -4,7 +4,7 @@ set :repository, 'git@github.com:mgz/getnextid.git'
 
 task :release do
     set :branch, 'master'
-    set :application, 'gentextid.com'
+    set :application, 'getnextid.com'
     server 'x2.gorod.lv', :app
 end
 
