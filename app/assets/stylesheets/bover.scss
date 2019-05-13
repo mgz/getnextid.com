@@ -4,13 +4,19 @@ body {
 
 }
 
-.nav {
-	.nav-item {
-		.nav-text {
-			margin-top: 9px;
-		}
-	}
+//.nav {
+//	.nav-item {
+//		.nav-text {
+//			margin-top: 9px;
+//		}
+//	}
+//}
+
+.bg-dark {
+	background-image: none;
+	background-repeat: no-repeat
 }
+
 .nav-tabs .nav-link.active {
 	//background-color: transparent;
 }
