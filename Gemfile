@@ -69,3 +69,5 @@ gem 'with_advisory_lock'
 gem 'rack-attack'
 gem "bootstrap_form"
 gem "hashid-rails"
+gem 'recap'
+gem "sentry-raven"
