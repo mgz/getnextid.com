@@ -1,5 +1,5 @@
 {
-  "name": "nextval",
+  "name": "getnextid.com",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.2",
