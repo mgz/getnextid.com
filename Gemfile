@@ -71,3 +71,4 @@ gem "bootstrap_form"
 gem "hashid-rails"
 gem 'recap'
 gem "sentry-raven"
+gem 'whenever'
