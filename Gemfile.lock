@@ -54,13 +54,17 @@ GEM
     bindex (0.7.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.4.4)
-      msgpack (~> 1.0)
     bootstrap_form (4.2.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     builder (3.2.3)
     byebug (11.0.1)
+    capistrano (2.15.9)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     capybara (3.19.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -83,6 +87,8 @@ GEM
     debug_inspector (0.0.3)
     erubi (1.8.0)
     execjs (2.7.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -90,6 +96,7 @@ GEM
       activerecord (>= 4.0)
       hashids (~> 1.0)
     hashids (1.0.5)
+    highline (2.0.1)
     httparty (0.16.3)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -118,12 +125,20 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    msgpack (1.2.10)
     multi_json (1.13.1)
     multi_xml (0.6.0)
+    multipart-post (2.0.0)
+    net-scp (2.0.0)
+      net-ssh (>= 2.6.5, < 6.0.0)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.2.0)
+    net-ssh-gateway (2.0.0)
+      net-ssh (>= 4.0.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    open4 (1.3.4)
     pg (1.1.4)
     public_suffix (3.0.3)
     puma (3.12.1)
@@ -162,6 +177,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    recap (1.2.2)
+      capistrano (~> 2.9)
+      open4
+      thor
     regexp_parser (1.4.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
@@ -179,6 +198,8 @@ GEM
     selenium-webdriver (3.142.1)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    sentry-raven (2.9.0)
+      faraday (>= 0.7.6, < 1.0)
     spawnling (2.1.6)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -222,7 +243,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootsnap (>= 1.1.0)
   bootstrap_form
   byebug
   capybara (>= 2.15)
@@ -235,8 +255,10 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-attack
   rails (~> 5.2.3)
+  recap
   sass-rails (~> 5.0)
   selenium-webdriver
+  sentry-raven
   spawnling
   spring
   spring-watcher-listen (~> 2.0.0)
