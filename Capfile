@@ -28,7 +28,7 @@ namespace :deploy do
 end
 
 task :copy_overlays do
-    as_app '[ -d ../overlay ] && rsync -q -a --no-perms --no-owner --no-group -I --no-times  ../overlay/ ./'
+    as_app 'if [ -d ../overlay ]; then rsync -q -a --no-perms --no-owner --no-group -I --no-times  ../overlay/ ./; fi'
 end
 
 task :update_crontab do
