@@ -9,14 +9,22 @@
 						class: 'form-control',
 						label: 'Password to read and increment:',
 						required: true,
-						'data-target' => 'counters.password_input',
-						append: button_tag('Generate and copy', class: 'btn btn-link', type: 'button')  %>
+						'data-target' => 'counters.passwordInput',
+						append: button_tag('Generate and copy',
+							class: 'btn btn-link',
+							'data-action': 'click->counters#generateAndCopyPassword',
+							'data-target': 'counters.passwordButton',
+							type: 'button')  %>
 					<%= f.text_field :read_password,
 						class: 'form-control',
 						label: 'Password to read (optional):',
 						placeholder: 'Optional',
-						'data-target' => 'counters.read_password_input',
-						append: button_tag('Generate and copy', class: 'btn btn-link', type: 'button')  %>
+						'data-target' => 'counters.readPasswordInput',
+						append: button_tag('Generate and copy',
+							class: 'btn btn-link',
+							'data-action': 'click->counters#generateAndCopyReadPassword',
+							'data-target': 'counters.readPasswordButton',
+							type: 'button')  %>
 
 					<div class="text-right mt-5">
 						<%= submit_tag 'Create counter', class: 'btn btn-primary', id: 'submit_button' %>
