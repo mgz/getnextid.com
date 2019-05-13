@@ -25,6 +25,9 @@ class CountersController < ApplicationController
     
     def show
         @counter = Counter.find_by_name(params[:name])
+        @counter_is_my = @counter.hashid == session[:my_last_counter_id]
+        
+        @counter_password = @counter_is_my ? @counter.password : 'YOUR_PASSWORD'
     end
     
     

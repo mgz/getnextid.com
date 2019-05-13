@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
     root to: 'counters#index'
-    scope "id" do
-        get ":name" => 'api#show'
-        post ":name" => 'api#inc_or_create'
+    scope "counter" do
+        get ':name/info' => 'counters#show', constraints: { name: /.+/ }
+        get ":name" => 'api#show', constraints: { name: /.+/ }
+        post ":name" => 'api#inc_or_create', constraints: { name: /.+/ }
     end
     resources :counters do
     end
-    get 'counter/:name' => 'counters#show'
+    
 
 end
