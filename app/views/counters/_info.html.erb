@@ -6,11 +6,12 @@
 <samp>1</samp></pre>
 
 
-		<p class="mt-5">Increment counter and get new value:</p>
+		<p class="mt-5">
+			Increment counter and get new value:
+		</p>
 		<pre class="code_session">
-<code>$ curl -X POST "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
+<code>$ curl -X POST "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>" <span style="color: lightgray"># this is a POST request</span></code>
 <samp>2</samp></pre>
-		<p>(You should make a POST request)</p>
 
 		<!--		<p class="mt-5">Edit your counter:</p>-->
 		<!--		<p> Open-->

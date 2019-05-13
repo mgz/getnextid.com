@@ -17,7 +17,7 @@ class CountersController < ApplicationController
         @counter.created_from_ip = @counter.incremented_from_ip= Ip.get(request.remote_ip)
         if @counter.save
             session[:my_last_counter_id] = @counter.hashid
-            redirect_to @counter.get_url
+            redirect_to @counter.get_url + '/info'
         else
             render action: 'new'
         end
