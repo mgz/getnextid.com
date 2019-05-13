@@ -1,7 +1,7 @@
 class CountersController < ApplicationController
     
     def index
-        @page_title = "IDS"
+        @page_title = "GetNextId.com - global counters"
     end
     
     def new
