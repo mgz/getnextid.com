@@ -37,7 +37,7 @@ task :update_crontab do
 end
 
 task :precompile do
-    Rake::Task["rails:assets:precompile"].invoke
+    as_app 'bin/rake assets:precompile RAILS_ENV=production'
 end
 
 task :make_tag do
