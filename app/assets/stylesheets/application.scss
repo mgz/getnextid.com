@@ -123,3 +123,10 @@ a[rel~="external"] {
 .monospaced {
 	font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
+
+.noselect {
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none;   /* Firefox all */
+	-ms-user-select: none;  /* IE 10+ */
+	user-select: none;  /* Likely future */
+}
