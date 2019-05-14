@@ -25,7 +25,7 @@ export default class extends Controller {
 	generateAndCopyReadPassword() {
 		const password = this.generatePassword();
 		this.readPasswordInputTarget.value = password;
-		this.copyToClipboard(this.passwordInputTarget);
+		this.copyToClipboard(this.readPasswordButtonTarget);
 		this.showCopiedNotification(this.readPasswordButtonTarget);
 	}
 
