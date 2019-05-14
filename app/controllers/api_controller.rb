@@ -11,15 +11,8 @@ class ApiController < ApplicationController
 
     end
     
-    def inc_or_create
+    def inc
         if params[:auth].present? && params[:auth] == @counter.password
-            Counter.with_advisory_lock('find') do
-                @counter = Counter.create!(
-                    name: params[:name],
-                    created_from_ip_id: Ip.get(request.remote_ip).id,
-                    incremented_from_ip_id: Ip.get(request.remote_ip).id
-                )
-            end
             @counter.inc!
             render plain: @counter.value
         else
