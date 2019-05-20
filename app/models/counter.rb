@@ -5,11 +5,13 @@ class Counter < ApplicationRecord
     belongs_to :incremented_from_ip, :class_name => "Ip"
     
     validates_uniqueness_of :name
-    
+    validates_length_of :name, maximum: 100
+    validates :value, numericality: { less_than_or_equal_to: MAX_VALUE,  only_integer: true }
+
     before_create :init_password
     
     def inc!
-        return self.increment!(:value).value
+         return self.increment!(:value).value
     end
     
     def get_url

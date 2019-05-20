@@ -13,8 +13,12 @@ class ApiController < ApplicationController
     
     def inc
         if params[:auth].present? && params[:auth] == @counter.password
-            @counter.inc!
-            render plain: @counter.value
+            if @counter.value < MAX_VALUE
+                @counter.inc!
+                render plain: @counter.value
+            else
+                render plain: "Error: MAX_VALUE is #{MAX_VALUE}", status: 500
+            end
         else
             render plain: "Invalid auth. Usage:\ncurl -X POST \"#{request.base_url}/counter/#{@counter.name}?auth=YOUR_PASSWORD\"", status: 403
         end
