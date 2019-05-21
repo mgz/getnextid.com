@@ -1,24 +1,15 @@
-# README
+This repo contains complete source code of the application. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# How to use:
 
-Things you may want to cover:
+Get current counter value:
+```bash
+$ curl -s "http://getnextid.com/counter/your.counter.name?auth=YOUR_PASSWORD"
+1
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Increment counter and get new value:
+```bash
+$ curl -s -X POST "http://getnextid.com/counter/your.counter.name?auth=YOUR_PASSWORD"
+2
+```
