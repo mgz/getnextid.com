@@ -1,7 +1,7 @@
 require 'recap/recipes/rails'
 require_relative 'config/environment.rb'
 
-set :repository, 'git@github.com:mgz/getnextid.git'
+set :repository, 'git@github.com:mgz/getnextid.com.git'
 
 task :release do
     set :branch, 'master'
