@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    root to: 'counters#index'
+    scope "counter" do
+        get ':name/info' => 'counters#show', constraints: { name: /.+/ }
+        get ":name" => 'api#show', constraints: { name: /.+/ }
+        post ":name" => 'api#inc_or_create', constraints: { name: /.+/ }
+    end
+    resources :counters do
+    end
+    
+
 end

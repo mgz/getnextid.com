@@ -1,0 +1,15 @@
+<% if @meta_names != nil -%>
+	<% for k, v in @meta_names do -%>
+		<meta name="<%= k %>" content="<%= v -%>"/>
+	<% end -%>
+<% end %>
+
+<% if @meta_properties != nil -%>
+	<% for k, v in @meta_properties do -%>
+		<meta property="<%= k %>" content="<%= v -%>"/>
+	<% end -%>
+<% end %>
+
+<% if @page_description.present? %>
+	<meta name="description" content="<%= @page_description %>">
+<% end %>
