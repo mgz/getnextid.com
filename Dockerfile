@@ -37,4 +37,5 @@ ENV RAILS_ENV=production \
     DB_PASSWORD=getnextid
 
 COPY docker/overlay/ /
+RUN chown -R app:app /home/app
 RUN chmod +x /etc/my_init.d/*
