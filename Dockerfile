@@ -5,10 +5,14 @@ ENV HOME /root
 RUN rm -f /etc/service/nginx/down; rm /etc/nginx/sites-enabled/default
 ADD docker/overlay/etc/nginx/sites-enabled/webapp.conf /etc/nginx/sites-enabled/webapp.conf
 
+# Install yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 RUN echo 'Europe/Moscow' > /etc/timezone && \
 apt-get update && \
 apt-get install -y tzdata \
-curl  \
+curl \
+yarn \
 postgresql-10 \
 postgresql-contrib && \
 rm /etc/localtime && \
