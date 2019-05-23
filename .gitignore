@@ -106,3 +106,5 @@ fabric.properties
 /.idea/workspace.xml
 /.idea/nextval.iml
 /.idea
+
+/postgres_data
