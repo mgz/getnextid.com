@@ -14,6 +14,8 @@ $ curl -s -X POST "http://getnextid.com/counter/your.counter.name?auth=YOUR_PASS
 2
 ```
 
+Ruby gem: https://github.com/mgz/getnextid-ruby
+
 
 # Running app in Docker yourself
 ### Clone and build docker image:
