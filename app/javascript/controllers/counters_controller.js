@@ -7,46 +7,47 @@
 //   <h1 data-target="hello.output"></h1>
 // </div>
 
-import { Controller } from "stimulus"
+import {Controller} from "stimulus"
 
 export default class extends Controller {
-	static targets = [ "passwordInput", "readPasswordInput", "readPasswordButton", "passwordButton" ];
+  static targets = ["passwordInput", "readPasswordInput", "readPasswordButton", "passwordButton"];
 
-	connect() {
+  connect() {
 
-	}
+  }
 
-	generateAndCopyPassword() {
-		const password = this.generatePassword();
-		this.passwordInputTarget.value = password;
-		this.copyToClipboard(this.passwordInputTarget);
-		this.showCopiedNotification(this.passwordButtonTarget);
-	}
-	generateAndCopyReadPassword() {
-		const password = this.generatePassword();
-		this.readPasswordInputTarget.value = password;
-		this.copyToClipboard(this.readPasswordButtonTarget);
-		this.showCopiedNotification(this.readPasswordButtonTarget);
-	}
+  generateAndCopyPassword() {
+    const password = this.generatePassword();
+    this.passwordInputTarget.value = password;
+    this.copyToClipboard(this.passwordInputTarget);
+    this.showCopiedNotification(this.passwordButtonTarget);
+  }
 
-	generatePassword() {
-		var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP1234567890";
-		var pass = "";
-		for (var x = 0; x < 12; x++) {
-			var i = Math.floor(Math.random() * chars.length);
-			pass += chars.charAt(i);
-		}
-		return pass;
-	}
+  generateAndCopyReadPassword() {
+    const password = this.generatePassword();
+    this.readPasswordInputTarget.value = password;
+    this.copyToClipboard(this.readPasswordButtonTarget);
+    this.showCopiedNotification(this.readPasswordButtonTarget);
+  }
 
-	copyToClipboard(target) {
-		target.select();
-		document.execCommand('copy');
-	}
+  generatePassword() {
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP1234567890";
+    var pass = "";
+    for (var x = 0; x < 12; x++) {
+      var i = Math.floor(Math.random() * chars.length);
+      pass += chars.charAt(i);
+    }
+    return pass;
+  }
 
-	showCopiedNotification(target) {
-		const oldText = target.textContent;
-		target.textContent = 'Copied!';
-		setTimeout(() => target.textContent = oldText, 1000)
-	}
+  copyToClipboard(target) {
+    target.select();
+    document.execCommand('copy');
+  }
+
+  showCopiedNotification(target) {
+    const oldText = target.textContent;
+    target.textContent = 'Copied!';
+    setTimeout(() => target.textContent = oldText, 1000)
+  }
 }

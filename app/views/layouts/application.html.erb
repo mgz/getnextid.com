@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
 <head>
-	<title><%= @page_title %></title>
-	<%= csrf_meta_tags %>
-	<%= csp_meta_tag %>
+  <title><%= @page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<%= render :partial => "layouts/meta" %>
-	<%= render :partial => "layouts/js_libs" %>
+  <%= render :partial => "layouts/meta" %>
+  <%= render :partial => "layouts/js_libs" %>
 
 
-	<%= stylesheet_link_tag 'application', media: 'all' %>
-	<%= javascript_include_tag 'application' %>
-	<%= javascript_pack_tag "application" %>
-	<%= render :partial => "layouts/analytics" %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag "application" %>
+  <%= render :partial => "layouts/analytics" %>
 </head>
 
 
 <body class="controller_<%= controller_name %> action_<%= action_name %>">
-	<%= render :partial => "layouts/navbar" unless @hide_navbar%>
-	<div class="container">
-		<%= flash_messages %>
-		<%= yield %>
-		<%= render :partial => "layouts/footer" %>
+<%= render :partial => "layouts/navbar" unless @hide_navbar %>
+<div class="container">
+  <%= flash_messages %>
+  <%= yield %>
+  <%= render :partial => "layouts/footer" %>
 
-	</div>
+</div>
 </body>

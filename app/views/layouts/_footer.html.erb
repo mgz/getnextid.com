@@ -1,11 +1,11 @@
 <div id="footer">
-	&copy; AMSOFT 2018 &middot;
-	<%= link_to 'duscuss and view app source',  'https://github.com/mgz/getnextid.com', target: '_blank'%> &middot;
-	<%= Counter.count %> counters created
+  &copy; AMSOFT 2018 &middot;
+  <%= link_to 'duscuss and view app source', 'https://github.com/mgz/getnextid.com', target: '_blank' %> &middot;
+  <%= Counter.count %> counters created
 </div>
 
 <% if flash[:js] %>
-	<script type="text/javascript" charset="utf-8">
-		<%== flash[:js] %>
-	</script>
+  <script type="text/javascript" charset="utf-8">
+    <%== flash[:js] %>
+  </script>
 <% end %>

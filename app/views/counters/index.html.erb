@@ -1,24 +1,24 @@
 <div class="jumbotron">
-	<h1 class="display-4 monospaced" >
-		GetNextId.com
-		<div class="float-right">
-			<iframe src="https://ghbtns.com/github-btn.html?user=mgz&repo=getnextid.com&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-		</div>
-	</h1>
-	<p class="mt-3">
-		Global unique counters for your infrastructure.
-	</p>
+  <h1 class="display-4 monospaced">
+    GetNextId.com
+    <div class="float-right">
+      <iframe src="https://ghbtns.com/github-btn.html?user=mgz&repo=getnextid.com&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+    </div>
+  </h1>
+  <p class="mt-3">
+    Global unique counters for your infrastructure.
+  </p>
 
-	<p>Use getnextid.com to increment your build numbers etc.</p>
+  <p>Use getnextid.com to increment your build numbers etc.</p>
 
-	<%= render partial: 'counters/info', locals: {counter_name: 'your.counter.name', counter_password: 'YOUR_PASSWORD'} %>
+  <%= render partial: 'counters/info', locals: {counter_name: 'your.counter.name', counter_password: 'YOUR_PASSWORD'} %>
 
-	<p class="mt-3">Your counters are password-protected.</p>
+  <p class="mt-3">Your counters are password-protected.</p>
 
-	<div class="text-center">
-		<%= link_to 'Create counter', '/counters/new', class: 'btn btn-lg btn-success'%>
+  <div class="text-center">
+    <%= link_to 'Create counter', '/counters/new', class: 'btn btn-lg btn-success' %>
 
-	</div>
+  </div>
 
 </div>
 

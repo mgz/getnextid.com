@@ -1,32 +1,34 @@
 <div class="card">
-	<div class="card-body">
-		<p>Get current counter value:</p>
-		<pre class="code_session">
-<code><span class="noselect">$ </span>curl -s "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
+  <div class="card-body">
+    <p>Get current counter value:</p>
+    <pre class="code_session">
+<code><span class="noselect">$ </span>curl -s "<%= request.base_url %>
+  /counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
 <samp>1</samp></pre>
 
 
-		<p class="mt-5">
-			Increment counter and get new value:
-		</p>
-		<pre class="code_session">
-<code><span class="noselect">$ </span>curl -s -X POST "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
+    <p class="mt-5">
+      Increment counter and get new value:
+    </p>
+    <pre class="code_session">
+<code><span class="noselect">$ </span>curl -s -X POST "<%= request.base_url %>
+  /counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
 <samp>2</samp></pre>
 
-		<!--		<p class="mt-5">Edit your counter:</p>-->
-		<!--		<p> Open-->
-		<%#= link_to @counter.get_url + '/info', target: '_blank' do %>
-		<!--				<%#= request.base_url %>/counter/<b><%#= counter_name %></b>/info-->
-		<%# end %>
-		<!--			in browser.-->
-		<!--		</p>-->
-	</div>
+    <!--		<p class="mt-5">Edit your counter:</p>-->
+    <!--		<p> Open-->
+    <%#= link_to @counter.get_url + '/info', target: '_blank' do %>
+    <!--				<%#= request.base_url %>/counter/<b><%#= counter_name %></b>/info-->
+    <%# end %>
+    <!--			in browser.-->
+    <!--		</p>-->
+  </div>
 </div>
 
 
 <style>
-	pre.code_session {
-		padding: 10px;
-		background-color: aliceblue;
-	}
+  pre.code_session {
+    padding: 10px;
+    background-color: aliceblue;
+  }
 </style>

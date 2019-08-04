@@ -15,11 +15,11 @@
 
 
 function autofocus() {
-	$(function() {
-		$('input.autofocus:first', this).focus().select();
-	});
+  $(function () {
+    $('input.autofocus:first', this).focus().select();
+  });
 }
 
-$(function() {
-	autofocus();
+$(function () {
+  autofocus();
 });
