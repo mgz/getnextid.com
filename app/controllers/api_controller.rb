@@ -3,7 +3,7 @@ class ApiController < ApplicationController
   before_action :check_if_counter_exists
   
   def show
-    if params[:auth].present? && params[:auth].in?([@counter.password, @counter.read_password])
+    if can_read_counter?
       render plain: @counter.value
     else
       render plain: "Invalid auth. Usage:\ncurl \"#{request.base_url}/counter/#{@counter.name}?auth=YOUR_PASSWORD\"", status: 403
@@ -12,7 +12,7 @@ class ApiController < ApplicationController
   end
   
   def inc
-    if params[:auth].present? && params[:auth] == @counter.password
+    if can_update_counter?
       if @counter.value < MAX_VALUE
         @counter.inc!
         render plain: @counter.value
@@ -32,5 +32,13 @@ class ApiController < ApplicationController
       render plain: "No such counter: #{params[:name]}", status: 404
       return false
     end
+  end
+  
+  def can_read_counter?
+    return params[:auth].present? && params[:auth].in?([@counter.password, @counter.read_password])
+  end
+  
+  def can_update_counter?
+    return params[:auth].present? && params[:auth] == @counter.password
   end
 end
