@@ -2,8 +2,7 @@
   <div class="card-body">
     <p>Get current counter value:</p>
     <pre class="code_session">
-<code><span class="noselect">$ </span>curl -s "<%= request.base_url %>
-  /counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
+<code><span class="noselect">$ </span>curl -s "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
 <samp>1</samp></pre>
 
 
@@ -11,8 +10,7 @@
       Increment counter and get new value:
     </p>
     <pre class="code_session">
-<code><span class="noselect">$ </span>curl -s -X POST "<%= request.base_url %>
-  /counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
+<code><span class="noselect">$ </span>curl -s -X POST "<%= request.base_url %>/counter/<b><%= counter_name %></b>?auth=<b><%= counter_password %></b>"</code>
 <samp>2</samp></pre>
 
     <!--		<p class="mt-5">Edit your counter:</p>-->
