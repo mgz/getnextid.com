@@ -82,4 +82,5 @@ production:
   <<: *default
   database: getnextid
   username: getnextid
+  host: db2.gorod.lv
   password: <%= ENV['NEXTVAL_DATABASE_PASSWORD'] || 'getnextid' %>
